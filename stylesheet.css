@@ -18,7 +18,7 @@ main {
     overflow: hidden;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #593825;
+    background-color: #F2D5A0;
 }
 
 .top-skrift {
@@ -61,22 +61,10 @@ p {
     justify-content: space-between;
     width: 85vmin;
     height: 65vmin;
-    margin: 2rem auto;
-    border: 8px solid;
-    border-image: linear-gradient(
-            -50deg,
-            #9973bf,
-            #d9946c,
-            #593825,
-            #f2d5a0,
-            #9973bf,
-            #d9946c,
-            #9973bf
-    )
-    1;
     transition: 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
+    border-radius: 20px;
 }
 .overlay {
     position: relative;
@@ -116,6 +104,8 @@ p {
     display: block;
     transition: 0.3s ease-in-out;
     z-index: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .inset {
@@ -135,13 +125,17 @@ p {
     height: 100%;
     background: #f9cbc3;
     box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
-    overflow-y: scroll;
     text-align: right;
     padding-left: 35px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
 }
-.tree {
-    place-self: center;
-    width: calc(50px + 2vw);
+
+.text::-webkit-scrollbar {      /* Chrome, Safari og nye Edge */
+    display: none;
 }
 
 .wrap:hover .overlay {
@@ -166,6 +160,13 @@ p {
     animation-duration: 0.7s;
     animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
     animation-fill-mode: backwards;
+}
+
+.wrap:hover .image-content-img {
+    width: 30vmin;             /* matcher den eksisterende størrelseændring */
+    opacity: 0.6;              /* hvor sløret / "faded" billedet bliver (justér 0.0 - 1.0) */
+    filter: brightness(0.9);   /* gør det en smule mørkere - valgfrit */
+    /* du kan også bruge: filter: grayscale(10%) brightness(0.9); */
 }
 /* Pop In */
 .pop {
