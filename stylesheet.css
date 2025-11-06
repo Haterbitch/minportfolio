@@ -2,15 +2,17 @@ body{
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
-main {
+.main {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #F2D5A0;
-    overflow: hidden;
-    min-height: 100vh;
+    overflow-x: auto;   /* Kun vandret scroll */
+    overflow-y: hidden;
     display: grid;
     grid-auto-flow: column;
     place-content: center;
+    width: 100vw;     /* Fylder hele skærmens bredde */
+    height: 100vh;
 }
 
 .header {
@@ -23,13 +25,24 @@ main {
 
 .top-skrift {
     color: #9973bf;
-    position: sticky;
+    position: absolute;
     display: inline-block;
     padding: 10px;
     animation: scroll 50s linear infinite;
     font-size: 2rem;
     letter-spacing: 2px;
     font-weight: lighter;
+}
+
+section{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    flex-shrink: 0;   /* Forhindrer dem i at blive presset sammen */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
 }
 
 /* Animation der får teksten til at glide hen over skærmen */
@@ -65,6 +78,7 @@ p {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0.25, 0.25, 0.25, 0.25);
 }
 .overlay {
     position: relative;
@@ -127,6 +141,7 @@ p {
     box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
     text-align: right;
     padding-left: 35px;
+    padding-right: 10px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     overflow-y: auto;
@@ -226,4 +241,3 @@ p {
         transform: translateY(0);
     }
 }
-
