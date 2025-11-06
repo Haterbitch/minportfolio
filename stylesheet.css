@@ -5,7 +5,7 @@ body{
 main {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #303030;
+    background-color: #F2D5A0;
     overflow: hidden;
     min-height: 100vh;
     display: grid;
@@ -18,11 +18,11 @@ main {
     overflow: hidden;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #303030;
+    background-color: #593825;
 }
 
 .top-skrift {
-    color: #f4059f;
+    color: #9973bf;
     position: sticky;
     display: inline-block;
     padding: 10px;
@@ -46,12 +46,12 @@ main {
 h1 {
     font-size: 5.25vmin;
     text-align: center;
-    color: white;
+    color: #593825;
 }
 p {
     font-size: max(10pt, 2.5vmin);
     line-height: 1.4;
-    color: #0e390e;
+    color: #593825;
     margin-bottom: 1.5rem;
 }
 
@@ -65,13 +65,13 @@ p {
     border: 8px solid;
     border-image: linear-gradient(
             -50deg,
-            green,
-            #00b300,
-            forestgreen,
-            green,
-            lightgreen,
-            #00e600,
-            green
+            #9973bf,
+            #d9946c,
+            #593825,
+            #f2d5a0,
+            #9973bf,
+            #d9946c,
+            #9973bf
     )
     1;
     transition: 0.3s ease-in-out;
@@ -84,7 +84,7 @@ p {
     width: 100%;
     height: 100%;
     padding: 1rem 0.75rem;
-    background: #186218;
+    background: #d9bbb0;
     transition: 0.4s ease-in-out;
     z-index: 1;
 }
@@ -98,24 +98,24 @@ p {
     border: 3px solid;
     border-image: linear-gradient(
             to bottom,
-            #aea724 5%,
-            forestgreen 35% 65%,
-            #aea724 95%
+            #d9946c 5%,
+            #9973bf 35% 65%,
+            #f2d5a0 95%
     )
     0 0 0 100%;
     transition: 0.3s ease-in-out 0.2s;
     z-index: 1;
 }
-.image-content {
+.image-content-img {
     position: absolute;
     top: 0;
     right: 0;
     width: 60vmin;
     height: 100%;
-    background-image: url("https://assets.codepen.io/4787486/trees.png");
-    background-size: cover;
+    object-fit: cover;         /* sørger for at billedet beskæres pænt */
+    display: block;
     transition: 0.3s ease-in-out;
-    /* border: 1px solid green; */
+    z-index: 0;
 }
 
 .inset {
@@ -133,10 +133,11 @@ p {
     right: 0;
     width: 60vmin;
     height: 100%;
-    padding: 3vmin 4vmin;
-    background: #fff;
+    background: #f9cbc3;
     box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
     overflow-y: scroll;
+    text-align: right;
+    padding-left: 35px;
 }
 .tree {
     place-self: center;
@@ -156,7 +157,7 @@ p {
 }
 
 .wrap:hover {
-    background: white;
+    background: #f3d6ce;
     transform: translateX(1rem);
 }
 
