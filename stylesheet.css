@@ -6,12 +6,10 @@ body{
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #F2D5A0;
-    overflow-x: auto;   /* Kun vandret scroll */
-    overflow-y: hidden;
     display: grid;
     grid-auto-flow: column;
     place-content: center;
-    width: 100vw;     /* Fylder hele skærmens bredde */
+    width: 100vw;
     height: 100vh;
 }
 
